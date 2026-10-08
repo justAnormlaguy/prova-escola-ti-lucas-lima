@@ -1,12 +1,9 @@
----
 
 # Especificação funcional
 
 Leitura: `constitution.md` → `spec.md` → `plan.md` → `tests.md` → `tasks.md`. Este documento define O QUE o serviço faz. O `plan.md` define COMO.
 
 **Para o executor:** todas as ambiguidades do contrato já foram resolvidas na seção 12 (Decisões). Não existe pergunta em aberto: não registre `[BLOQUEIO]`, implemente a decisão escrita.
-
----
 
 ## 1. Visão geral
 
