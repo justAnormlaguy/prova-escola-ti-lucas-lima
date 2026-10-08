@@ -38,7 +38,8 @@ conta. Se nenhum site foi consultado, escreva: **"Nenhum site consultado."**)*
 
 | # | Link público da conversa | Onde o conteúdo foi usado |
 | --- | --- | --- |
-| — | | |
+| 01 | https://claude.ai/share/73dc1bbb-3e6e-4a51-a2b5-fa8e46d14405 | Utilizei como guia e orientação para a execução do SDD |
+| 02 |  |
 
 *(Se nenhuma IA foi utilizada, escreva: **"Nenhuma IA utilizada."**)*
 
