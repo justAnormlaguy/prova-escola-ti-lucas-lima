@@ -101,7 +101,7 @@ Toda validação acontece em `app.py`, antes de chamar `repositorio.py` ou `regr
 
 ### 6.2 Placa
 
-Válida somente se for `str` e casar inteira com `^[A-Z0-9]{7}$`. Não aplicar `strip()`, não converter para maiúsculas.
+validar com re.fullmatch somente se for `str` e casar inteira com `^[A-Z0-9]{7}$`. Não aplicar `strip()`, não converter para maiúsculas.
 
 |Valor recebido|Resultado|
 |---|---|
@@ -126,8 +126,7 @@ Válida somente se for `str` e casar inteira com `^[A-Z0-9]{7}$`. Não aplicar `
 
 ### 6.4 `id` na rota
 
-O `id` é recebido como texto. Válido somente se casar com `^[0-9]+$` (apenas dígitos ASCII). Inválido (`"abc"`, `"-1"`, `"1.5"`) ou inexistente → 404 `bilhete_nao_encontrado`, sempre em JSON.
-
+O `id` é recebido como texto. Válido somente se casar com `^[0-9]+$` (apenas dígitos ASCII). Inválido (`"abc"`, `"-1"`, `"1.5"`) ou inexistente → 404 `bilhete_nao_encontrado`, sempre em JSON. validar com re.fullmatch
 ### 6.5 Query `data` (relatório)
 
 Válida somente se casar com `^[0-9]{4}-[0-9]{2}-[0-9]{2}$` E for data real (`date.fromisoformat` não falha). Ausente, vazia, `"05/10/2026"`, `"2026-1-5"`, `"2026-13-01"`, `"2026-02-30"` → 422 `data_invalida`.
@@ -310,7 +309,7 @@ Executar nesta ordem, só com `int`:
 
 |Passo|Regra|
 |---|---|
-|1|`segundos = int((saida - entrada).total_seconds())`; `minutos = max(0, segundos // 60)`|
+|1|`segundos = int((saida - entrada).total_seconds())`; `minutos = max(0, (saida - entrada) // timedelta(minutes=1))`|
 |2|Se `minutos <= TOLERANCIA_MINUTOS` (0) → `valor = 0` e fim|
 |3|`fracoes = (minutos + FRACAO_MINUTOS - 1) // FRACAO_MINUTOS`|
 |4|`valor = min(fracoes * VALOR_FRACAO_CENTAVOS, TETO_DIARIO_CENTAVOS)`|
@@ -385,7 +384,7 @@ Autenticação, persistência em disco, paginação, edição de bilhete, `GET /
 
 | UC  | Endpoint                           | REQ              | TEST (ver `tests.md`) |
 | --- | ---------------------------------- | ---------------- | --------------------- |
-| UC1 | `POST /bilhetes`                   | 001–005          | 101–118               |
+| UC1 | `POST /bilhetes`                   | 001–005          | 101–119               |
 | UC8 | `POST /bilhetes`                   | 006–007          | 120–124               |
 | UC2 | `POST /bilhetes/{id}/encerramento` | 010–015, 017     | 001–021, 130–137      |
 | UC7 | (regra de valor)                   | 016              | 001–002, 138–139      |
