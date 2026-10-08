@@ -38,8 +38,9 @@ conta. Se nenhum site foi consultado, escreva: **"Nenhum site consultado."**)*
 
 | # | Link público da conversa | Onde o conteúdo foi usado |
 | --- | --- | --- |
-| 01 | https://claude.ai/share/73dc1bbb-3e6e-4a51-a2b5-fa8e46d14405 | Utilizei como guia e orientação para a execução do SDD |
-| 02 |  |
+| 01 | https://claude.ai/share/73dc1bbb-3e6e-4a51-a2b5-fa8e46d14405 | Utilizei como guia e orientação para a execução do SDD (OLD) | 
+| 02 | https://1drv.ms/t/c/329d737a6f360ff2/IQALLLDxcTClS7aJ3jDT5N45AS3Jie4m_3K5FjsVAoHYAi0?e=jyqI9Q | DOcumento Guia para criação do SDD, feito com base no seu github e nas informações da prova |
+| 03 | https://claude.ai/share/73dc1bbb-3e6e-4a51-a2b5-fa8e46d14405 | Utilizei como guia e orientação para a execução do SDD (NEW) | 
 
 *(Se nenhuma IA foi utilizada, escreva: **"Nenhuma IA utilizada."**)*
 
@@ -50,6 +51,9 @@ está declarado acima, e que consigo explicar qualquer trecho entregue — tenha
 ele vindo da minha cabeça, de um site ou de uma IA consultada.
 
 **Nome / RA:** Lucas de Oliveira Lima 230008102
+
+OBS: Professor realizei este commit fora da faculdade pois na pressa esqueci de colocar o guia que comentei contigo e o link da conversa está desatualizado, antes de entregar eu havia feito uma pergunta sobre revisão no claude, por causa disso coloquei ele ali.
+Deixei o link antigo e o novo como prova. 
 
 [^transparencia]: Este arquivo é, ele mesmo, um exemplo de markdown bem
     usado: *alert* para a regra crítica, tabelas para os registros e *footnote*
