@@ -49,7 +49,7 @@ Declaro que todo o conteúdo deste repositório que não é de minha autoria dir
 está declarado acima, e que consigo explicar qualquer trecho entregue — tenha
 ele vindo da minha cabeça, de um site ou de uma IA consultada.
 
-**Nome / RA:**
+**Nome / RA:** Lucas de Oliveira Lima 230008102
 
 [^transparencia]: Este arquivo é, ele mesmo, um exemplo de markdown bem
     usado: *alert* para a regra crítica, tabelas para os registros e *footnote*
