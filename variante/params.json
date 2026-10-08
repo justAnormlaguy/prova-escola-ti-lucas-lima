@@ -1,0 +1,9 @@
+{
+  "slug": "prova-escola-ti-lucas-lima",
+  "EXAM_DIR": "exams/2026/track-01-especificacao-sdd",
+  "TARIFA_HORA_CENTAVOS": 500,
+  "FRACAO_MINUTOS": 30,
+  "TETO_DIARIO_CENTAVOS": 5000,
+  "PORTA_SERVICO": 8003,
+  "TOLERANCIA_MINUTOS": 0
+}
