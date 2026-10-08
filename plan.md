@@ -26,11 +26,14 @@ Este plano define COMO implementar o que o `spec.md` define.
 | `requirements.txt` | `flask>=3.0,<4`                                                                           |
 | `Dockerfile`       | Imagem `python:3.12-slim`                                                                 |
 | `pyproject.toml`   | Configuração do Ruff (seção Qualidade)                                                    |
+| `validacao.py`     | validação                                                  |
+
+
 
 ## Detalhes de implementação obrigatórios
 
-- Ler o body com `request.get_json(silent=True)`: JSON inválido vira `None` e gera 422 `placa_invalida`.
-- Declarar o `id` das rotas como texto e validar com `isdigit()`. Não numérico gera 404 `bilhete_nao_encontrado`, e não o 404 em HTML do `<int:id>`.
+- Ler o body com `request.get_json(silent=True, force=True)`: JSON inválido vira `None` e gera 422 `placa_invalida`.
+- Declarar o `id` das rotas como texto e validar com `re.fullmatch(r"[0-9]+", texto)`. Não numérico gera 404 `bilhete_nao_encontrado`, e não o 404 em HTML do `<int:id>`.
 - Tempo médio com conta inteira `(2 * soma + n) // (2 * n)`, nunca `round()`, que arredonda 0,5 para o par.
 - Datas de saída no formato `AAAA-MM-DDTHH:MM:SS-03:00`, sem microssegundos.
 
