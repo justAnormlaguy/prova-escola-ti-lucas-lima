@@ -11,6 +11,9 @@ Leitura: `constitution.md` → `spec.md` → `plan.md` → `tests.md` → `tasks
 4. Valores de cobrança: use a tabela da `spec.md` seção 10. O exemplo `95 min → 1250` e o exemplo `{"valor": 12.50}` do contrato NÃO valem.
 5. Nunca use `float`, `round()` ou `/` em cálculo de dinheiro ou de média.
 6. Nunca use `# noqa`. Função grande demais é dividida (PRI-04).
+7. Gere primeiro e por completo T01 a T09; os testes (T10) vêm por último."
+8. "T11 é uma verificação mental: não reescreva arquivos já gerados."
+9. "Cada arquivo em um bloco de código precedido de ### Arquivo: caminho/nome, com conteúdo completo, sem reticências."
 
 ## Arquivos finais
 
@@ -175,3 +178,4 @@ Rota `GET /relatorios/diario`:
 |                       |                                                        |
 
 **Pronto quando:** checklist completo, `ruff check .` e `pytest` limpos.
+***pronto quando***  o código atende aos casos TEST-xxx
