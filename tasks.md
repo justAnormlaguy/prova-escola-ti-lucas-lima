@@ -1,4 +1,4 @@
----
+
 # Tarefas 
 
 Leitura: `constitution.md` → `spec.md` → `plan.md` → `tests.md` → `tasks.md`. Este arquivo define a ORDEM de execução. Cada tarefa cita os `REQ` que implementa e os `TEST` que comprovam que está pronta.
@@ -26,7 +26,7 @@ Leitura: `constitution.md` → `spec.md` → `plan.md` → `tests.md` → `tasks
 |`tests/test_regras.py`|T10|
 |`tests/test_api.py`|T10|
 
----
+
 
 ## T01 — Esqueleto do projeto
 
