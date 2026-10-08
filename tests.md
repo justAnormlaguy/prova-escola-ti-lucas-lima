@@ -1,3 +1,4 @@
+# Casos de teste
 
 Leitura: `constitution.md` → `spec.md` → `plan.md` → `tests.md` → `tasks.md`. Este arquivo define os TESTES. 
 
@@ -6,13 +7,13 @@ Leitura: `constitution.md` → `spec.md` → `plan.md` → `tests.md` → `tasks
 |Item|Definição|
 |---|---|
 |Ferramenta|`pytest`, declarado em `requirements-dev.txt` (não entra na imagem de produção)|
-|Arquivos|`tests/test_regras.py` (seções 2–3) e `tests/test_api.py` (seções 4–11)|
+|Arquivos|`tests/test_regras.py` (seções 2–3) e `tests/test_api.py` (seções 4–12)|
 |Estado|Cada teste usa `criar_app()` novo: repositório vazio, contador em 1|
 |Relógio|`agora` do módulo `app` substituído via `monkeypatch` por instante fixo|
 |Instante padrão|`AGORA = 2026-10-12T15:00:00-03:00`|
 |Notação|`AGORA−N` = string ISO de `AGORA` menos N minutos, ex.: `AGORA−95` = `"2026-10-12T13:25:00-03:00"`|
 
-Fixture de referência (as rotas chamam `agora()` pelo nome global do módulo `app`, por isso o `monkeypatch` funciona):
+Fixture de referência (as rotas chamam `agora()` pelo nome global do módulo `app`, por isso o `monkeypatch` funciona) import app as app_modulo: 
 
 ```python
 FUSO = timezone(timedelta(hours=-3))
@@ -151,7 +152,7 @@ Datas abaixo em `-03:00` salvo indicação.
 |---|---|---|---|
 |TEST-150|020|nenhum bilhete|200, `[]` (**Borda**)|
 |TEST-151|020|A entrada 08:00, B 10:00, C 09:00 (placas distintas)|ids na ordem `[B, C, A]`|
-|TEST-152|020|dois bilhetes com a mesma entrada, ids 1 e 2|ordem `[2, 1]` (**Borda** empate, D-05)|
+|TEST-152|020|dois bilhetes com a mesma entrada, ids 1 e 2|ordem `[2, 1]` (**Borda** empate, D-05) placas distintas|
 |TEST-153|020|3 abertos; encerrar 1; cancelar 1|só 1 item, `status == "aberto"`, 4 chaves|
 
 ## 10. UC6 — Histórico · `GET /bilhetes?placa=`
@@ -170,10 +171,10 @@ Datas abaixo em `-03:00` salvo indicação.
 |ID|REQ|Preparação / requisição|Esperado|
 |---|---|---|---|
 |TEST-170|030, 033|nenhum bilhete; `?data=2026-10-12`|`{"data":"2026-10-12","total_bilhetes":0,"faturamento_centavos":0,"tempo_medio_minutos":0}` (**Borda**)|
-|TEST-171|030, 031|encerrar bilhetes com entrada `AGORA−30` e `AGORA−61`|`total_bilhetes 2`, `faturamento_centavos 1000`, `tempo_medio_minutos 46`|
+|TEST-171|030, 031|encerrar bilhetes com entrada `AGORA−30` e `AGORA−61`|`total_bilhetes 2`, `faturamento_centavos 1000`, `tempo_medio_minutos 46` placas distintas|
 |TEST-172|030|TEST-171 + um aberto + um cancelado|mesmos valores de TEST-171 (**Borda** D-04)|
 |TEST-173|030|entrada `2026-10-11T23:00:00-03:00`, relógio `2026-10-12T01:00:00-03:00`, encerrar|conta em `2026-10-12` (120 min, 1000); `2026-10-11` devolve zeros|
-|TEST-174|030|relógio `2026-10-12T23:30:00-03:00` (já 13/10 em UTC), encerrar|conta em `2026-10-12`, não em `2026-10-13` (**Borda** fuso)|
+|TEST-174|030|relógio `2026-10-12T23:30:00-03:00` (já 13/10 em UTC), encerrar|conta em `2026-10-12`, não em `2026-10-13` (**Borda** fuso) abrir sem entrada e encerrar no mesmo instante|
 |TEST-175|032|sem `data`|422 `data_invalida`|
 |TEST-176|032|`?data=05/10/2026`|422 `data_invalida`|
 |TEST-177|032|`?data=2026-13-01`|422 `data_invalida`|
