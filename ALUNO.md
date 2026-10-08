@@ -2,9 +2,9 @@
 
 # ALUNO
 
-Nome: Lucas Lima
+Nome: Lucas de Oliveira Lima
 
-RA: >>> PREENCHER <<<
+RA: 23000810-2
 
 Conta GitHub: @justAnormlaguy
 
